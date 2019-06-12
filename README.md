@@ -4,7 +4,9 @@ For exercises that have unit tests, the project must be built with the approprat
 ```
 cmake_tests ..
 make
+./CppND-Route-Planning-Project -f ./map.osm
 ```
+
 Those commands will build the code with the appropriate tests exercise. The tests can then be run from the `build` directory as follows:
 ```
 ../bin/test
