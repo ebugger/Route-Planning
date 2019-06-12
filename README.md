@@ -24,3 +24,27 @@ Not all exercises have tests. The table is given below with the complete list of
 | Find the Closest Node       |
 | Write the A* Search Stub    |
 | Finish A* Search            |
+
+This program relay on IO2D Library:
+```
+git clone --recurse-submodules https://github.com/cpp-io2d/P0267_RefImpl
+cd P0267_RefImpl
+mkdir Debug
+cd Debug
+cmake --config Debug "-DCMAKE_BUILD_TYPE=Debug" ..
+cmake --build .
+make
+make install
+```
+System Library requirement:
+```
+Install GCC:  apt install build-essential
+Install Cairo:  apt install libcairo2-dev
+Install graphicsmagick:  apt install libgraphicsmagick1-dev
+Install libpng:  apt install libpng-dev
+```
+##Cmake requirement>=3.13
+```
+https://gitlab.kitware.com/cmake/cmake
+./bootstrap && make && sudo make install
+```
