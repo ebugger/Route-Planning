@@ -42,11 +42,16 @@ class RouteModel : public Model {
     RouteModel(const std::vector<std::byte> &xml); 
     // public "getter" method SNodes. This method return a reference to the vector of Nodes stored as m_Nodes.
     auto &SNodes() {return m_Node;}
-    std::vector<Node> path; // This variable will eventually store the path that is found by the A* search.
+    // This variable will eventually store the path that is found by the A* search.
+    std::vector<Node> path; 
+    //used for testing
     auto &GetNodeToRoadMap() {return node_to_road;}
     RouteModel::Node &FindClosestNode(float x, float y);
   private:
+    //method will operate only on the node_to_road variable declared below, and only within the RouteModel class, so it can 
+    //be private, it needs no arguments, and can have void return type.
     void CreateNodeToRoadHashmap();
+    //an unordered_map with an int key type, and a vector of const Model::Road* as the value type.
     std::unordered_map<int, std::vector<const Model::Road *>> node_to_road;
     //This will store all of the nodes from the Open Street Map data.
     std::vector<Node> m_Node;
