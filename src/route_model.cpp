@@ -43,12 +43,11 @@ RouteModel::Node *RouteModel::Node::FindNeighbor(std::vector<int> node_indices) 
     for (int node_index : node_indices) {
         //std::cout << "node_indices" << node_index<< "\n";
         node = parent_model->SNodes()[node_index];
-        //std::cout << "node_addr" << &node<< "\n";
+        //make sure the closet one is not curent node
         if (this->distance(node) != 0 && !node.visited) {
             if (closest_node == nullptr || this->distance(node) < this->distance(*closest_node))  {
-                //closest_node = &node; ！！！！！ ptr to ptr
+                //closest_node = &node; ！！！！！ ptr = ptr
                 closest_node = &parent_model->SNodes()[node_index];
-                //std::cout << "----closest_node----" << index<<  "----closest_addr----" <<  &node <<"\n";
             }
         }
     }
