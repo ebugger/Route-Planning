@@ -26,6 +26,7 @@ class RouteModel : public Model {
           //euclidean distance
           return std::sqrt(std::pow((x - other.x), 2) + std::pow((y - other.y), 2));
         }
+        //to populate the neighbors vector of the current Node object (the vector this->neighbors)
         void FindNeighbors();
         Node(){}
         Node(int idx, RouteModel * search_model, Model::Node node) : Model::Node(node), parent_model(search_model), index(idx) {}
