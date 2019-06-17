@@ -35,6 +35,8 @@ class RouteModel : public Model {
         int index;
         //it allows each node to access data stored in the parent model that the node belongs to
         RouteModel * parent_model = nullptr;
+        // to return a pointer to the closest unvisited node from a vector of node indices, where the distance is measured to the 
+        // current node (this).
         Node* FindNeighbor(std::vector<int> node_indices);
     };
     
