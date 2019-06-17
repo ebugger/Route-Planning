@@ -48,6 +48,7 @@ class RouteModel : public Model {
     std::vector<Node> path; 
     //used for testing
     auto &GetNodeToRoadMap() {return node_to_road;}
+    //to find the nodes in the RouteModel that are closest to the starting and ending coordinates input by user
     RouteModel::Node &FindClosestNode(float x, float y);
   private:
     //method will operate only on the node_to_road variable declared below, and only within the RouteModel class, so it can 
