@@ -10,6 +10,12 @@ RouteModel::RouteModel(const std::vector<std::byte> &xml) : Model(xml) {
     m_Node.push_back(Node(counter, this, node));
     counter++;
   }
+  /*
+  std::vector<Model::Node> nodes = this->Nodes();
+  for(int i=0,i<nodes.size(),i++) {
+    m_Node.push_back(Node(i, this, nodes[i]));
+    }
+  */
 
   CreateNodeToRoadHashmap();
 }
@@ -20,6 +26,7 @@ void RouteModel::CreateNodeToRoadHashmap() {
            for (int node_idx : Model::Ways()[road.way].nodes) {
                if (node_to_road.find(node_idx) == node_to_road.end()) {
                    node_to_road[node_idx] = std::vector<const Model::Road*> ();
+                   /*
                }
                node_to_road[node_idx].push_back(&road);
            } 
