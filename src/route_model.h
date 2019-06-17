@@ -19,8 +19,11 @@ class RouteModel : public Model {
         float g_value = 0.0;
         bool visited = false;
         std::vector<Node *> neighbors;
-        
+        //find the distance between two nodes,This will allow the search algorithm to find the closest node to the current node
+        //The distance method shouldn't change the object being passed, so you can make it a const method (add const after the 
+        //function name).
         float distance(Node other) const {
+          //euclidean distance
           return std::sqrt(std::pow((x - other.x), 2) + std::pow((y - other.y), 2));
         }
         void FindNeighbors();
