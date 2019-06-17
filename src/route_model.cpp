@@ -26,7 +26,10 @@ void RouteModel::CreateNodeToRoadHashmap() {
            for (int node_idx : Model::Ways()[road.way].nodes) {
                if (node_to_road.find(node_idx) == node_to_road.end()) {
                    node_to_road[node_idx] = std::vector<const Model::Road*> ();
-                   /*
+               /*
+               std::unordered_map<int, std::vector<const Model::Road *>>::const_iterator got = node_to_road.find(node_idx);
+               if (got == node_to_road.end())
+               */
                }
                node_to_road[node_idx].push_back(&road);
            } 
