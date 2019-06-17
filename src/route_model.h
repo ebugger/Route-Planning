@@ -12,12 +12,14 @@ class RouteModel : public Model {
   public:
     class Node : public Model::Node {
       public:
-        // Add public Node variables and methods here.
+
         Node * parent = nullptr;
+        //4 basic attr used for A* Search
         float h_value = std::numeric_limits<float>::max();
         float g_value = 0.0;
         bool visited = false;
         std::vector<Node *> neighbors;
+        
         float distance(Node other) const {
           return std::sqrt(std::pow((x - other.x), 2) + std::pow((y - other.y), 2));
         }
@@ -27,8 +29,8 @@ class RouteModel : public Model {
         int GetDistance()  const { return index; }
       
       private:
-        // Add private Node variables and methods here.
         int index;
+        //it allows each node to access data stored in the parent model that the node belongs to
         RouteModel * parent_model = nullptr;
         Node* FindNeighbor(std::vector<int> node_indices);
     };
