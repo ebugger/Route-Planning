@@ -4,6 +4,9 @@
 RouteModel::RouteModel(const std::vector<std::byte> &xml) : Model(xml) {
   int counter = 0;
   for (Model::Node node : this->Nodes()) {
+    //The second argument should be a pointer to the RouteModel instance that the Node belongs to. Since you are writing your code 
+    //inside the RouteModel constructor, you can use the this keyword to get a pointer to the current RouteModel instance. In other 
+    //words, you can pass this as the second argument.
     m_Node.push_back(Node(counter, this, node));
     counter++;
   }
