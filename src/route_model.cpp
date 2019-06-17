@@ -56,12 +56,11 @@ RouteModel::Node *RouteModel::Node::FindNeighbor(std::vector<int> node_indices) 
 
 void RouteModel::Node::FindNeighbors() {
     RouteModel::Node *neighbor_node = nullptr ;
+    //Maybe current node is in the crossans then it belongs to multiple road.
     for (const Model::Road * road : parent_model->node_to_road[this->index]) {
-        //std::cout << "node_to_road:" << road << "\n" ;
         neighbor_node = FindNeighbor(parent_model->Ways()[road->way].nodes);
         if (neighbor_node) {
             this->neighbors.push_back(neighbor_node);
-            //std::cout << "neighbor_node" << neighbor_node << "\n" ;
         }
     }
 }
