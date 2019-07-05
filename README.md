@@ -41,9 +41,10 @@ System Library requirement:
 Install GCC:  apt install build-essential
 Install Cairo:  apt install libcairo2-dev
 Install graphicsmagick:  apt install libgraphicsmagick1-dev
-Install libpng:  apt install libpng-dev
+Install libpng:  apt install libpng-dev libcurl4-gnutls-dev
 ```
 ##Cmake requirement>=3.13
+libcurl4-gnutls-dev is used for compile cmake to use https download sth.
 ```
 https://gitlab.kitware.com/cmake/cmake
 ./bootstrap && make && sudo make install
